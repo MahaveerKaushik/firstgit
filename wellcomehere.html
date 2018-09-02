@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" media="mediatype and|not|only (expressions)">
+	<link rel="stylesheet" type="text/css" href="css/wellcomehere.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Change image on click with jQuery">
+	<meta name="keywords" content="Change image on click with jQuery">
+	<meta name="author" content="SSD Tutorials">
+
+</head>
+<body>
+	
+	<div>
+
+		<div id="header" >   
+			<H1><span >WELL</span>COMEHERE</H1>
+			<img id="arrow" src="./images/down-arrow.png" width="40px" height="40px" align="right"/>
+		</div>
+
+		<div id="menu">
+		
+			<a class="active" href="#Home">Home</a>
+			<a href="#prjct">Our Partners</a>
+			<a href="#abt">About Us</a>			
+			<a href="#blogs">Wibes</a>
+			<a href="#cncts">Contact Us</a>
+		
+			<div id="namaste" class="welcoming">
+				<img src="./images/namaste-yall.png" width="200" height="125" style="padding-left: 80px; padding-top: 50px;" />
+			</div>
+
+			<script type="text/javascript">
+
+	    		$(document).ready(function(){
+	    			$('#menu').hide();
+	    			$("#arrow").click(function(){
+	    				$("#menu").slideToggle("medium");
+	    	
+	        			$("#arrow").toggleClass("rotated");
+	        			$("#namaste").addClass("welcoming");
+	    			});
+				});
+	    		
+	    	</script>
+					
+		</div>
+    </div>
+
+    <div id="bdy">
+    	<p>The Platform For the Passionate Professionals.</p>
+      	
+    		<button id="btn">Hire Us!!</button>
+    	
+    	<div id="emp-infor"></div>
+
+    	<!-- <script type="text/javascript">
+    		var empContainer = document.getElementById("emp-infor");
+    		var btn = document.getElementById("btn");
+    		var i=-1;
+    		
+    		btn.addEventListener("click", function() {
+    			i++;
+    			var ourRequest = new XMLHttpRequest();
+    			ourRequest.open('GET', 'https://gist.githubusercontent.com/JyothsnaJoe/50ee35cc1df2bf6c56f25a5a928b6e1a/raw/c415bdc865df866e1cfd50f94014f6390213803c/description-1.json');
+
+    			ourRequest.onload = function(){
+    				var ourData = JSON.parse(ourRequest.responseText);
+    				console.log(ourData);
+    				if(i<4)
+    				{
+    					renderHTML(ourData);
+    				}
+    				else{
+	    			$('#btn').hide();
+    				}   				
+    			};   			
+    			ourRequest.send();  			
+    		});
+
+    		function renderHTML(data) {
+    			var htmlString = "";
+    				htmlString += "<div class='card' id='flex-container'><p id=title><b><i>" + data[i].name + "</i></b></p>" + "<p> is  a " + data[i].position + ".</p></div>";    			
+    			empContainer.insertAdjacentHTML('beforeend', htmlString);
+    		}
+
+
+
+    	</script> -->
+    </div>
+</body>
+</html> 
